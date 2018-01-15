@@ -11,6 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use EloquentORM\User;
+
+Route::get('/create', function () {
+    //return view('welcome');
+    
+	$user=User::create([
+		'name' => 'Lynda Morales',
+		'email' => 'lindaf@mail.com',
+		'password' => bcrypt('123123'),
+		'gender' => 'm', 
+		'biography' => 'Alumna de PHP'
+	]);
+
+	return 'Usuario Gurdado';
+
+});
+
+Route::get('/update-user', function () {
+    //return view('welcome');
+    
+	$user=User::find(3);
+
+	$user->gender='f';
+	//$user->biography='I am Programmer';
+
+	$user->save();
+
+	return 'Usuario actualizado';
+
 });
