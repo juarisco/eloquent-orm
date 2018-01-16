@@ -19,20 +19,28 @@
                 <li>
                     <a href="{{ route('home') }}">Home</a>
                 </li>
+                <li>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        Consultas Eloquent
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('all') }}">
+                                Todos los usuarios (All)
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Curso Eloquent ORM</h1>
-            <p>Texto</p>
-        </div>
-    </div>
+    
 
-    <div class="container">
+
         @yield('content')
-    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
